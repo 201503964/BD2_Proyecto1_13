@@ -1,0 +1,116 @@
+db.Log_Actividad.aggregate(
+[
+{
+    $lookup:{
+        from:'Habitacion',
+        localField:'HABITACION_idHabitacion',
+        foreignField:'idHabitacion',
+        as:'pacientes_por_Habitacion'
+    }
+},
+{
+    $group:{_id:'$idHabitacion',cantidad_Pacientes:{$sum:1}}
+},
+{$sort: { "_id": 1 }}
+]
+)
+
+
+db.Paciente.aggregate(
+    [
+{
+    $lookup:{
+        from:'Log_Actividad',
+        localField:'idPaciente',
+        foreignField:'idPaciente',
+        as:'pacientes_por_Genero'
+    }
+},
+{
+    $group:{_id:'$genero',cantidad_Pacientes:{$sum:1}}
+}
+]
+)
+
+db.Log_Actividad.aggregate(
+[
+{
+    $lookup:{
+        from:'Paciente',
+        localField:'PACIENTE_idPaciente',
+        foreignField:'idPaciente',
+        as:'pacientes_por_edad'
+    }
+},
+{
+    $group:{_id:'$edad',cantidad_Pacientes:{$sum:1}}
+},
+{$sort: { "cantidad_Pacientes": -1 }},
+{$limit: 5}
+]
+)
+
+db.Log_Actividad.aggregate(
+[
+{
+    $lookup:{
+        from:'Paciente',
+        localField:'PACIENTE_idPaciente',
+        foreignField:'idPaciente',
+        as:'pacientes_por_edad'
+    }
+},
+{
+    $group:{_id:'$edad',cantidad_Pacientes:{$sum:1}}
+},
+{$sort: { "cantidad_Pacientes": 1 }},
+{$limit: 5}
+]
+)
+
+db.Log_Actividad.aggregate(
+[
+{
+    $lookup:{
+        from:'Habitacion',
+        localField:'HABITACION_idHabitacion',
+        foreignField:'idHabitacion',
+        as:'pacientes_por_Habitacion'
+    }
+},
+{
+    $group:{_id:'$idHabitacion',cantidad_Pacientes:{$sum:1}}
+},
+{$sort: { "cantidad_Pacientes": -1 }},
+{$limit: 5}
+]
+)
+
+db.Log_Actividad.aggregate(
+[
+{
+    $lookup:{
+        from:'Habitacion',
+        localField:'HABITACION_idHabitacion',
+        foreignField:'idHabitacion',
+        as:'pacientes_por_Habitacion'
+    }
+},
+{
+    $group:{_id:'$idHabitacion',cantidad_Pacientes:{$sum:1}}
+},
+{$sort: { "cantidad_Pacientes": 1 }},
+{$limit: 5}
+]
+)
+
+
+db.Log_Actividad.aggregate(
+[
+{
+    $group:{_id:'$timestampx',cantidad_Pacientes:{$sum:1}}
+},
+{$sort: { "cantidad_Pacientes": -1 }},
+{$limit: 5}
+]
+)
