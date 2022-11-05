@@ -1,0 +1,85 @@
+
+<div class=" content">
+    <div class=" row">
+  
+      <div class=" col-md-12">
+        <div class=" card">
+          <div class=" card-header">
+            <h4 class=" card-title">EDADES MAS ATENDIDAS</h4>
+          </div>
+          <div class=" card-body">
+            <div class=" table-responsive">
+              <table class=" table tablesorter" id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>EDAD</th>
+                    <th>CANTIDAD PACIENTES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let temp of lstpacientes">
+                    <td>{{ temp.edad }}</td>
+                    <td>{{ temp.cant_pacientes }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class=" col-md-12">
+          <div class=" card">
+            <div class=" card-header">
+              <h4 class=" card-title">EDADES MENOS ATENDIDAS</h4>
+            </div>
+            <div class=" card-body">
+              <div class=" table-responsive">
+                <table class=" table tablesorter" id="">
+                  <thead class=" text-primary">
+                    <tr>
+                      <th>EDAD</th>
+                      <th>CANTIDAD PACIENTES</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let temp1 of lstpacientes1">
+                      <td>{{ temp1.edad }}</td>
+                      <td>{{ temp1.cant_pacientes }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class=" col-md-12">
+            <div class=" card">
+              <div class=" card-header">
+                <h4 class=" card-title">DIA CON MAS PACIENTES</h4>
+              </div>
+              <div class=" card-body">
+                <div class=" table-responsive">
+                  <table class=" table tablesorter" id="">
+                    <thead class=" text-primary">
+                      <tr>
+                        <th>GENERO</th>
+                        <th>CANTIDAD PACIENTES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let temp2 of lstpacientes2">
+                        <td>{{ temp2.timestampx }}</td>
+                        <td>{{ temp2.cant_pacientes }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+    </div>
+  </div>
+  

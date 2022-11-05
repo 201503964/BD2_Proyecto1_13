@@ -1,0 +1,88 @@
+
+<div class=" content">
+  <div class=" row">
+
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class=" card-title">INFORMACIÓN HABITACIONES</h4>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>IDHABITACION</th>
+                  <th>HABITACION</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let temp of lstpacientes">
+                  <td>{{ temp.idHabitacion }}</td>
+                  <td>{{ temp.Habitacion }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class=" col-md-12">
+        <div class=" card">
+          <div class=" card-header">
+            <h4 class=" card-title">HABITACIONES MÁS USADAS</h4>
+          </div>
+          <div class=" card-body">
+            <div class=" table-responsive">
+              <table class=" table tablesorter" id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>IDHABITACION</th>
+                    <th>HABITACION</th>
+                    <th>CANTIDAD PACIENTES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let temp1 of lstpacientes1">
+                    <td>{{ temp1.idHabitacion }}</td>
+                    <td>{{ temp1.Habitacion }}</td>
+                    <td>{{ temp1.cant_pacientes }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col-md-12">
+          <div class=" card">
+            <div class=" card-header">
+              <h4 class=" card-title">HABITACIONES MENOS USADAS</h4>
+            </div>
+            <div class=" card-body">
+              <div class=" table-responsive">
+                <table class=" table tablesorter" id="">
+                  <thead class=" text-primary">
+                    <tr>
+                      <th>IDHABITACION</th>
+                      <th>HABITACION</th>
+                      <th>CANTIDAD PACIENTES</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let temp2 of lstpacientes2">
+                      <td>{{ temp2.idHabitacion }}</td>
+                      <td>{{ temp2.Habitacion }}</td>
+                      <td>{{ temp2.cant_pacientes }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  </div>
+</div>

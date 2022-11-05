@@ -1,0 +1,32 @@
+
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class=" card-title">INFORMACIÓN PACIENTES</h4>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>IDPACIENTE</th>
+                  <th>EDAD</th>
+                  <th>GENERO</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let temp of lstpacientes">
+                  <td>{{ temp.idPaciente }}</td>
+                  <td>{{ temp.edad }}</td>
+                  <td>{{ temp.genero }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
