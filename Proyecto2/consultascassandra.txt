@@ -1,0 +1,36 @@
+CREATE KEYSPACE "Practica2"
+WITH replication = {
+	'class' : 'SimpleStrategy',
+	'replication_factor' : 1
+};
+
+
+CREATE TABLE "Proyecto2"."HABITACION" (
+	"idHabitacion" int,
+	"Habitacion" text,
+	PRIMARY KEY ("idHabitacion")
+);
+
+CREATE TABLE "Proyecto2"."LOG_Habitacion" (
+	timestampx text,
+	id_log int,
+	statusx text,
+	"idHabitacion" int,
+	PRIMARY KEY (id_log)
+);
+
+CREATE TABLE "Proyecto2"."PACIENTE" (
+	"idPaciente" int,
+	edad int,
+	genero text,
+	PRIMARY KEY ("idPaciente")
+);
+
+CREATE TABLE "Proyecto2"."LOG_ACTIVIDAD" (
+	id_log_actividad int,
+	timestampx text,
+	actividad text,
+	"PACIENTE_idPaciente" int,
+	"HABITACION_idHabitacion" int,
+	PRIMARY KEY (id_log_actividad)
+);
